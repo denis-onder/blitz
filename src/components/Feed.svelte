@@ -5,7 +5,7 @@
 </script>
 
 <section>
-  <h3>{feed.title}</h3>
+  <span>{feed.title}</span>
   {#if feed.posts.length > 0}
     {#each feed.posts as post}
       <Post {post} />

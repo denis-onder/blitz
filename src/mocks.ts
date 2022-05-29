@@ -17,7 +17,7 @@ const generatePost = (): Post => {
 const generateFeed = (): Feed => {
   return {
     title: `${generateRandomNumber()} - Feed`,
-    posts: Array(3).fill(generatePost()),
+    posts: Array(10).fill(generatePost()),
   };
 };
 
