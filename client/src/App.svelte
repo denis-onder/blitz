@@ -1,6 +1,17 @@
 <script lang="ts">
-  import Feed from "./components/Feed.svelte";
+  import { Feed as FeedType } from "./types/Feed";
+  import { fetchFeed } from "./api";
   import { mocks } from "./mocks";
+  import { Source } from "./types/Source";
+  import { onMount } from "svelte";
+  import Feed from "./components/Feed.svelte";
+
+  let feeds: Array<FeedType> = [];
+
+  onMount(async () => {
+    const feed = await fetchFeed(Source.REDDIT, "javascript");
+    feeds.push(feed);
+  });
 </script>
 
 <main id="main">
